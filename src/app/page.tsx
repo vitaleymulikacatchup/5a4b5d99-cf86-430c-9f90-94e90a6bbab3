@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import NavbarLayoutFloatingInline from '@/components/navbar/NavbarLayoutFloatingInline';
@@ -17,7 +17,7 @@ const assetMap: { id: string; url: string; alt?: string }[] = [{"id":"hero-image
 export default function Page() {
   // Asset resolution function
   const resolveAsset = (assetRef: string) => {
-    if (!assetRef.startsWith('asset://')) return assetRef;
+    if (!assetRef.startsWith('asset://')) return { url: assetRef, alt: 'Decorative image' };
     const id = assetRef.replace('asset://', '');
     const asset = assetMap.find(a => a.id === id);
     return {
